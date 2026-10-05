@@ -1,0 +1,7 @@
+local/
+data/
+annotations/
+images/
+labels/
+*.zip
+__pycache__/
