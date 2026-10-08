@@ -1,10 +1,26 @@
 # 中文试卷题目区域数据集
 
-2062 页试卷，11354 个题目框，覆盖数学、语文、英语、物理、化学、生物、历史、地理、政治九个科目。用于试卷题目检测与裁切。
+2360 页试卷，12431 个题目框，覆盖数学、语文、英语、物理、化学、生物、历史、地理、政治九个科目。用于试卷题目检测与裁切。
 
 数据包含原图、YOLO 标签、像素坐标标注、题号和续题关系。类别为 `0: question`。标注采用 AI 逐页标注与交叉复核。
 
-[下载数据集](https://github.com/jz315/chinese-exam-question-regions/releases/download/v0.2.0/chinese-exam-question-regions-v0.2.zip) · [数据格式](FORMAT.md) · [标注规则](ANNOTATION_POLICY.md)
+[下载数据集](https://github.com/jz315/chinese-exam-question-regions/releases/download/v0.3.0/chinese-exam-question-regions-v0.3.zip) · [数据格式](FORMAT.md) · [标注规则](ANNOTATION_POLICY.md)
+
+## 数据划分
+
+按整卷及同场考试分组，训练集 2094 页、验证集 130 页、测试集 136 页。
+
+| 科目 | 训练 | 验证 | 测试 | 合计 |
+| --- | ---: | ---: | ---: | ---: |
+| 数学 | 882 | 15 | 14 | 911 |
+| 语文 | 193 | 13 | 16 | 222 |
+| 英语 | 164 | 11 | 16 | 191 |
+| 物理 | 189 | 15 | 16 | 220 |
+| 化学 | 126 | 15 | 15 | 156 |
+| 生物 | 119 | 16 | 14 | 149 |
+| 历史 | 144 | 15 | 15 | 174 |
+| 地理 | 134 | 15 | 15 | 164 |
+| 政治 | 143 | 15 | 15 | 173 |
 
 ## 使用
 
@@ -16,7 +32,7 @@
 from pathlib import Path
 from ultralytics import YOLO
 
-data = Path("chinese-exam-question-regions-v0.2/dataset.yaml").resolve()
+data = Path("chinese-exam-question-regions-v0.3/dataset.yaml").resolve()
 YOLO("yolo26s.pt").train(data=str(data), epochs=100, imgsz=1280)
 ```
 
