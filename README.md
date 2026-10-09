@@ -1,10 +1,14 @@
-# 中文试卷题目区域数据集
+# 中文试卷切题数据集
 
-2360 页试卷，12431 个题目框，覆盖数学、语文、英语、物理、化学、生物、历史、地理、政治九个科目。用于试卷题目检测与裁切。
+**Chinese Exam Question Detection Dataset**
+
+2360 页试卷，12431 个题目框，覆盖数学、语文、英语、物理、化学、生物、历史、地理、政治九个科目。这套中文试卷题目区域数据集用于训练 YOLO 等目标检测模型，支持题目检测、试卷分割和自动切题。
 
 数据包含原图、YOLO 标签、像素坐标标注、题号和续题关系。类别为 `0: question`。标注采用 AI 逐页标注与交叉复核。
 
-[下载数据集](https://github.com/jz315/chinese-exam-question-regions/releases/download/v0.3.0/chinese-exam-question-regions-v0.3.zip) · [数据格式](FORMAT.md) · [标注规则](ANNOTATION_POLICY.md)
+A Chinese exam paper layout dataset with 2,360 page images and 12,431 question bounding boxes across nine subjects. Includes YOLO labels and pixel-coordinate annotations for question detection, automatic question cropping, and document layout analysis.
+
+[Hugging Face 数据集](https://huggingface.co/datasets/ccace/chinese-exam-question-regions) · [GitHub 仓库](https://github.com/jz315/chinese-exam-question-regions) · [下载 ZIP](https://github.com/jz315/chinese-exam-question-regions/releases/download/v0.3.0/chinese-exam-question-regions-v0.3.zip) · [数据格式](FORMAT.md) · [标注规则](ANNOTATION_POLICY.md)
 
 ## 数据划分
 
